@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include<iostream>
 #include<cassert>
@@ -10,19 +10,13 @@ void InsertionSort(T arr[], int n)
 {
 	for (int i = 1; i < n; i++)
 	{
-		T temp = arr[i];
-		for (int j = i - 1; j <= 0; j--)
+		T e = arr[i];
+		int j = i;
+		for (; j > 0 && arr[j] < arr[j - 1]; j--)
 		{
-			if (temp < arr[j])
-			{
-				arr[j + 1] = arr[j];
-			}
-			else
-			{
-				arr[j] = temp;
-				break;
-			}
+			arr[j] = arr[j - 1];
 		}
+		arr[j] = e;
 	}
 }
 
